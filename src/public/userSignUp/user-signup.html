@@ -1,1 +1,19 @@
-<h1>User Sign Up for Restaurant Newsletter</h1>
+<h1 class="container" style='padding-left:300px;'>User Sign Up for Restaurant Newsletter</h1>
+<div class="container" style='width:30%;' >
+  <form name="userSignUpForm" novalidate>
+    <div class="form-group"  width='20px'>
+      <input type="text" class="form-control" placeholder="First Name" ng-model='userSignUpCtrl.firstName' required><br>
+      <input type="text" class="form-control" placeholder="Last Name" ng-model='userSignUpCtrl.lastName' required>
+    </div>
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="Email" ng-model='userSignUpCtrl.eMail' required>
+    </div>
+    <div class="form-group">
+      <input type="Number" class="form-control" placeholder="Phone Number" ng-model='userSignUpCtrl.pNumber' required>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Favorite dish" ng-model='userSignUpCtrl.favDish' required>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click='userSignUpCtrl.validateUser()'>Submit</button>
+  </form>
+ </div>
