@@ -13,6 +13,7 @@
     </div>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Favorite dish" ng-model='userSignUpCtrl.user.favDish' required>
+      <p ng-if='userSignUpCtrl.favFound'>No such menu number exists</p>
     </div>
     <button type="submit" class="btn btn-primary" ng-click='userSignUpCtrl.validateUser()'>Submit</button>
   </form>
