@@ -1,1 +1,8 @@
-<h1>Not Signed Up Yet. Sign up Now!</h1>
+<h1 ng-if='!myInfoCtrl.user'>Not Signed Up Yet. Sign up Now!</h1>
+<div class="container">
+  <label>{{myInfoCtrl.user.firstName}}</label><br>
+  <label>{{myInfoCtrl.user.lastName}}</label><br>
+  <label>{{myInfoCtrl.user.eMail}}</label><br>
+  <label>{{myInfoCtrl.user.pNumber}}</label><br>
+  <label>{{myInfoCtrl.user.favDish}}</label><br>
+</div>

@@ -7,6 +7,9 @@
 	function userInfoService(){
 		var service=this;
 		service.userDetails=[];
+		service.getUserInfo=function(){
+			return service.userDetails[0];
+		};
 		service.storeUser=function(user){
 			service.userDetails.push(user);
 			console.log("In Service",user.firstName);
