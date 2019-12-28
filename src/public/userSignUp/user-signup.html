@@ -2,14 +2,21 @@
 <div class="container" style='width:30%;' >
   <form name="userSignUpForm" novalidate>
     <div class="form-group"  width='20px'>
-      <input type="text" class="form-control" placeholder="First Name" ng-model='userSignUpCtrl.user.firstName' required><br>
-      <input type="text" class="form-control" placeholder="Last Name" ng-model='userSignUpCtrl.user.lastName' required>
+      <input type="text" class="form-control" placeholder="First Name" name='fName' ng-model='userSignUpCtrl.user.firstName' required minlength='4' maxlength='10'><br>
+      <span ng-if='(userSignUpForm.fName.$error.minlength||userSignUpForm.fName.$error.maxlength ) && userSignUpForm.fName.$touched'> First name must meet conditions [ min characters is 4 and max is 10 ] </span>
+      <input type="text" class="form-control" placeholder="Last Name" name='lName' ng-model='userSignUpCtrl.user.lastName' required minlength='4' maxlength='10'>
+      <span ng-if='(userSignUpForm.lName.$error.minlength||userSignUpForm.lName.$error.maxlength ) && userSignUpForm.lName.$touched'> Last name must meet conditions [ min characters is 4 and max is 10 ] </span>
     </div>
     <div class="form-group">
-      <input type="email" class="form-control" placeholder="Email" ng-model='userSignUpCtrl.user.eMail' required>
+      <input type="email" class="form-control" name='eMail' placeholder="Email" ng-model='userSignUpCtrl.user.eMail' required>
+      <span ng-if="userSignUpCtrl.eMail.$invalid && userSignUpCtrl.eMail.$touched">
+            Must be a valid email address: handle@domain format</span>
     </div>
     <div class="form-group">
-      <input type="Number" class="form-control" placeholder="Phone Number" ng-model='userSignUpCtrl.user.pNumber' required>
+      <input type="phone" class="form-control" pattern="(\d{3})-(\d{3})-(\d{4})" name='phone' placeholder="Phone ###-###-####" ng-model='userSignUpCtrl.user.pNumber' required>
+      <span ng-if="userSignUpCtrl.phone.$invalid && userSignUpCtrl.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
     </div>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Favorite dish" ng-model='userSignUpCtrl.user.favDish' required>
