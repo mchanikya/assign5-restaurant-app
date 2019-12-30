@@ -9,12 +9,12 @@
     </div>
     <div class="form-group">
       <input type="email" class="form-control" name='eMail' placeholder="Email" ng-model='userSignUpCtrl.user.eMail' required>
-      <span ng-if="userSignUpCtrl.eMail.$invalid && userSignUpCtrl.eMail.$touched">
+      <span ng-if="userSignUpForm.eMail.$invalid && userSignUpForm.eMail.$touched">
             Must be a valid email address: handle@domain format</span>
     </div>
     <div class="form-group">
       <input type="phone" class="form-control" pattern="(\d{3})-(\d{3})-(\d{4})" name='phone' placeholder="Phone ###-###-####" ng-model='userSignUpCtrl.user.pNumber' required>
-      <span ng-if="userSignUpCtrl.phone.$invalid && userSignUpCtrl.phone.$touched">
+      <span ng-if="userSignUpForm.phone.$invalid && userSignUpForm.phone.$touched">
             Phone must be in the format ###-###-####.
           </span>
     </div>
