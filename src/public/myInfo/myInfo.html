@@ -11,7 +11,7 @@
   <!-- <label>{{myInfoCtrl.user.favDish}}</label><br> -->
   <!-- <label>{{myInfoCtrl.user.favItem['short_name']}}</label> -->
   <!-- <label> {{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}  </label> -->
-  <img alt="No image found" src="images/menu/{{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}/{{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}.jpg"><br>
+  <img src="images/menu/{{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}/{{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}.jpg"><br>
   <label ng-if="myInfoCtrl.user.favItem['name']">Name: {{myInfoCtrl.user.favItem['name']}}</label><br>
   <label ng-if="myInfoCtrl.user.favItem['description']">Description: {{myInfoCtrl.user.favItem['description']}}</label><br>
   <label ng-if="myInfoCtrl.user.favItem['price_small']>0">price_small: {{myInfoCtrl.user.favItem['price_small']}}</label><br>
