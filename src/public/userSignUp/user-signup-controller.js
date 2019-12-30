@@ -20,6 +20,7 @@
     $ctrl.validateUser=function(){
       var response = MenuService.getMenuItems($ctrl.user.favDish);
       response.then(function(data){
+        console.log(data);
         $ctrl.favFound=false;
         userInfoService.storeUser($ctrl.user);
         $ctrl.user.favItem=data.data;
