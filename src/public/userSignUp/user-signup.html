@@ -3,9 +3,9 @@
   <form name="userSignUpForm" novalidate>
     <div class="form-group"  width='20px'>
       <input type="text" class="form-control" placeholder="First Name" name='fName' ng-model='userSignUpCtrl.user.firstName' required minlength='4' maxlength='10'><br>
-      <span ng-if='(userSignUpForm.fName.$error.minlength||userSignUpForm.fName.$error.maxlength ) && userSignUpForm.fName.$touched'> First name must meet conditions [ min characters is 4 and max is 10 ] </span>
+      <span ng-if='(userSignUpForm.fName.$error.minlength||userSignUpForm.fName.$error.maxlength ) || userSignUpForm.fName.$touched'> First name must meet conditions [ min characters is 4 and max is 10 ] </span>
       <input type="text" class="form-control" placeholder="Last Name" name='lName' ng-model='userSignUpCtrl.user.lastName' required minlength='4' maxlength='10'>
-      <span ng-if='(userSignUpForm.lName.$error.minlength||userSignUpForm.lName.$error.maxlength ) && userSignUpForm.lName.$touched'> Last name must meet conditions [ min characters is 4 and max is 10 ] </span>
+      <span ng-if='(userSignUpForm.lName.$error.minlength||userSignUpForm.lName.$error.maxlength ) || userSignUpForm.lName.$touched'> Last name must meet conditions [ min characters is 4 and max is 10 ] </span>
     </div>
     <div class="form-group">
       <input type="email" class="form-control" name='eMail' placeholder="Email" ng-model='userSignUpCtrl.user.eMail' required>
@@ -20,10 +20,10 @@
     </div>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Favorite dish" ng-model='userSignUpCtrl.user.favDish' required>
-      <p ng-if='userSignUpCtrl.favFound'>No such menu number exists</p>
+      <p ng-if='userSignUpCtrl.favFound' style="color:red;">No such menu number exists</p>
     </div>
     <button type="submit" class="btn btn-primary"  ng-disabled="userSignUpForm.$invalid" ng-click='userSignUpCtrl.validateUser()'>Submit</button>
-    <div class="form-group" ng-if="userSignUpCtrl.infoFlag">
+    <div class="form-group" ng-if="userSignUpCtrl.infoFlag" style='color:blue;'>
         Your information has been saved
     </div>
   </form>
