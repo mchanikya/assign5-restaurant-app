@@ -1,8 +1,17 @@
 <h1 ng-if='!myInfoCtrl.user'>Not Signed Up Yet. Sign up Now!</h1>
-<div class="container">
+<div class="container" ng-if='myInfoCtrl.user'>
   <label>{{myInfoCtrl.user.firstName}}</label><br>
   <label>{{myInfoCtrl.user.lastName}}</label><br>
   <label>{{myInfoCtrl.user.eMail}}</label><br>
   <label>{{myInfoCtrl.user.pNumber}}</label><br>
-  <label>{{myInfoCtrl.user.favDish}}</label><br>
+  <!-- <label>{{myInfoCtrl.user.favDish}}</label><br> -->
+  <!-- <label>{{myInfoCtrl.user.favItem['short_name']}}</label> -->
+  <!-- <label> {{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}  </label> -->
+  <img src="images/menu/{{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}/{{myInfoCtrl.user.favItem['short_name'] | splitStringAndNumber }}.jpg"><br>
+  <label>Name: {{myInfoCtrl.user.favItem['name']}}</label><br>
+  <label>Description: {{myInfoCtrl.user.favItem['description']}}</label><br>
+  <label>price_small: {{myInfoCtrl.user.favItem['price_small']}}</label><br>
+  <label>price_large: {{myInfoCtrl.user.favItem['price_large']}}</label><br>
+  <label>small_portion_name: {{myInfoCtrl.user.favItem['small_portion_name']}}</label><br>
+  <label>large_portion_name: {{myInfoCtrl.user.favItem['large_portion_name']}}</label><br>
 </div>

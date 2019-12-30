@@ -22,6 +22,9 @@
       <input type="text" class="form-control" placeholder="Favorite dish" ng-model='userSignUpCtrl.user.favDish' required>
       <p ng-if='userSignUpCtrl.favFound'>No such menu number exists</p>
     </div>
-    <button type="submit" class="btn btn-primary" ng-click='userSignUpCtrl.validateUser()'>Submit</button>
+    <button type="submit" class="btn btn-primary"  ng-disabled="userSignUpForm.$invalid" ng-click='userSignUpCtrl.validateUser()'>Submit</button>
+    <div class="form-group" ng-if="userSignUpCtrl.infoFlag">
+        Your information has been saved
+    </div>
   </form>
  </div>
